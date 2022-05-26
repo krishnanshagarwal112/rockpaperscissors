@@ -1,7 +1,4 @@
 let numberOfTimes = prompt("Enter number of times you want to play");
-
-
-
 items = ["rock","paper","scissor"]
 
 function computerInput(array){
@@ -9,10 +6,7 @@ function computerInput(array){
     return computerInput;
 }
 
-
-
-function playRound(user, computer){
-    
+function playRound(user, computer){ 
     if (user == "rock"){
         if(computer == "paper"){
             return "Computer wins"
@@ -46,10 +40,7 @@ function playRound(user, computer){
             return "Tie"
         }
     }
-
 }
-
-
 
 function playMultipleRound(){
     for(let i = 0; i < numberOfTimes; i++){
@@ -59,7 +50,6 @@ function playMultipleRound(){
         console.log(cInput);
         playRound(userInput,cInput);
         console.log(playRound(userInput,cInput));
-        
     }
 }
 
