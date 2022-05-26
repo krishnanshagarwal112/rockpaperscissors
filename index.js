@@ -1,5 +1,6 @@
-let userInput = (prompt("Enter any of rock paper scissor ")).toLowerCase();
-console.log("User Input > ",userInput);
+let numberOfTimes = prompt("Enter number of times you want to play");
+
+
 
 items = ["rock","paper","scissor"]
 
@@ -8,9 +9,10 @@ function computerInput(array){
     return computerInput;
 }
 
-console.log("Computer Input > ",computerInput(items));
+
 
 function playRound(user, computer){
+    
     if (user == "rock"){
         if(computer == "paper"){
             return "Computer wins"
@@ -47,5 +49,19 @@ function playRound(user, computer){
 
 }
 
-console.log(playRound(userInput,computerInput(items)));
+
+
+function playMultipleRound(){
+    for(let i = 0; i < numberOfTimes; i++){
+        let userInput = (prompt("Enter any of rock paper scissor ")).toLowerCase();
+        console.log(userInput);
+        let cInput = computerInput(items);
+        console.log(cInput);
+        playRound(userInput,cInput);
+        console.log(playRound(userInput,cInput));
+        
+    }
+}
+
+playMultipleRound()
 
