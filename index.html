@@ -5,9 +5,132 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Papaer Scissors</title>
-    <script src="index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <style>
+
+        .buttonClass span{
+            margin-top: 12px;
+            font-size: x-large;
+            font-family: monospace;
+            font-weight: 900;
+        }
+
+        .buttonClass img{
+            width: 100%;
+            height: auto;
+        }
+
+        #result{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 35px;
+            height: 5em;
+            width: 100%;
+            font-size: xxx-large;
+            font-family: 'Gloria Hallelujah', cursive;
+            letter-spacing: 1.4px;
+
+        }
+        .buttonContainer{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: space-around;
+
+        }
+
+        .buttonClass{
+            width: 100px;
+            height: auto;
+            background-color: transparent;
+            border: 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .buttonClass:hover{
+            cursor:pointer;
+            background-color: gainsboro;
+        }
+
+        #score{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .parentScore{
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            column-gap: 20px;
+        }
+        .scoreClass{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .scoreClass span, #nGames{
+            font-size: x-large;
+            font-weight: 600;
+            font-family: monospace;
+        }
+        
+
+    </style>
 </head>
 <body>
+
+    <div class="buttonContainer">
+        <button class="buttonClass" data-name = "Rock">
+            <img  src="images/stone.png" alt="">
+            <span>Rock</span>
+        </button>
+        <button class="buttonClass" data-name = "Paper">
+            <img src="images/paperwork.png" alt="">
+            <span>Paper</span>
+        </button>
+        <button class="buttonClass" data-name = "Scissor">
+            <img src="images/scissors.png" alt="">
+            <span>Scissor</span>
+        </button>
+    </div>
+    
+    <div id="result">
+    </div>
+
+    <div id="score">
+        <div>
+            <span id="nGames"></span>
+        </div>
+
+        <div class="parentScore">
+            <div class="scoreClass">
+                <span>Computer</span>
+                <span id="computerScore"></span>
+            </div>
+            <div class="scoreClass">
+                <span>User</span>
+                <span id="userScore"></span>
+            </div>
+            <div class="scoreClass">
+                <span>Tie</span>
+                <span id="tieScore"></span>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+    <script src="index.js" ></script>
     
 </body>
 </html>

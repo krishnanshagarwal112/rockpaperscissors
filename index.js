@@ -1,57 +1,88 @@
-let numberOfTimes = prompt("Enter number of times you want to play");
-items = ["rock","paper","scissor"]
+const buttons = document.querySelectorAll("button");
+const resultDiv = document.getElementById('result');
+const userScore = document.getElementById('userScore');
+const computerScore = document.getElementById('computerScore');
+const tieScore = document.getElementById('tieScore');
+const nGames = document.getElementById('nGames');
+
+let userCounter = 0;
+let computerCounter = 0;
+let tieCounter = 0;
+
+
+
+
+for(let i = 0 ; i < 3 ; i++){
+    buttons[i].addEventListener("click",function(){
+        let computer = computerInput(array);
+        let result =  playRound(buttons[i].dataset.name, computer);
+        resultDiv.innerHTML =  result;
+        if(result == "Computer Wins :("){
+            computerCounter++;
+        }
+        if(result == "User Wins :)"){
+            userCounter++;
+        }
+        if(result == "Tie :(:"){
+            tieCounter++;
+        }
+
+        let totalgames = userCounter + computerCounter + tieCounter;
+
+        nGames.innerHTML = "Number of games played > " + totalgames
+        userScore.innerHTML = userCounter;
+        computerScore.innerHTML = computerCounter;
+        tieScore.innerHTML = tieCounter;
+
+    })
+
+}
+
+
+
+array = ["Rock","Paper","Scissor"];
 
 function computerInput(array){
     let computerInput = array[Math.floor(Math.random()*3)];
     return computerInput;
 }
 
+
+
 function playRound(user, computer){ 
-    if (user == "rock"){
-        if(computer == "paper"){
-            return "Computer wins"
+    if (user == "Rock"){
+        if(computer == "Paper"){
+            return "Computer Wins :("
         }
-        if(computer == "scissor"){
-            return "User wins"
+        if(computer == "Scissor"){
+            return "User Wins :)"
         }
-        if(computer == "rock"){
-            return "Tie"
-        }
-    }
-    if (user == "paper"){
-        if(computer = "scissor"){
-            return "Computer wins"
-        }
-        if(computer = "rock"){
-            return "User wins"
-        }
-        if(computer == "paper"){
-            return "Tie"
+        if(computer == "Rock"){
+            return "Tie :(:"
         }
     }
-    if (user == "scissor"){
-        if(computer = "rock"){
-            return "Computer wins"
+    if (user == "Paper"){
+        if(computer == "Scissor"){
+            return "Computer Wins :("
         }
-        if(computer = "paper"){
-            return "User wins"
+        if(computer == "Rock"){
+            return "User Wins :)"
         }
-        if(computer == "scissor"){
-            return "Tie"
+        if(computer == "Paper"){
+            return "Tie :(:"
         }
     }
-}
-
-function playMultipleRound(){
-    for(let i = 0; i < numberOfTimes; i++){
-        let userInput = (prompt("Enter any of rock paper scissor ")).toLowerCase();
-        console.log(userInput);
-        let cInput = computerInput(items);
-        console.log(cInput);
-        playRound(userInput,cInput);
-        console.log(playRound(userInput,cInput));
+    if (user == "Scissor"){
+        if(computer == "Rock"){
+            return "Computer Wins :("
+        }
+        if(computer == "Paper"){
+            return "User Wins :)"
+        }
+        if(computer == "Scissor"){
+            return "Tie :(:"
+        }
     }
 }
 
-playMultipleRound()
 
