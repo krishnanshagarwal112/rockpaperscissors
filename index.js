@@ -15,6 +15,7 @@ let tieCounter = 0;
 for(let i = 0 ; i < 3 ; i++){
     buttons[i].addEventListener("click",function(){
         let computer = computerInput(array);
+        console.log(computer);
         let result =  playRound(buttons[i].dataset.name, computer);
         resultDiv.innerHTML =  result;
         if(result == "Computer Wins :("){
